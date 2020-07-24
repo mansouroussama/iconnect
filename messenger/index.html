@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sign in - iConnect</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section class="login" id="login">
+			<form>
+				<img src="img/logo.gif" alt="iConnect">
+				<div class="text">
+					<h2>Sign in</h2>
+					<h3>with your account to continue</h3>						
+				</div>
+				<div class="clearfix"></div>
+				<div class="input-name">
+					<input type="email" id="email" onfocus="onFocus(this)" onblur="onBlur(this)">
+					<label>Your Email</label>
+					<span></span>
+					<p></p>
+				</div>
+				<div class="input-password">
+					<input type="password" id="password" onfocus="onFocus(this)" onblur="onBlur(this)">
+					<label>Your Password</label>
+					<span></span>							
+					<p></p>
+				</div>
+				<button type="button" onclick="logIn()">Log in</button>
+				<a href="javascript:void(0)">Not a member? Sign up</a>
+			</form>
+			<div class="copyright">
+				<span>&copy; Copyright 2018</span><span>All rights reserved to iConnect</span>
+				<div class="clearfix"></div>
+			</div>		
+		</section>
+		<section class="messenger" id="messenger">
+			<navbar>
+				<div class="search">
+					<input type="text" placeholder="Search" spellcheck="false" title="Search">
+					<button><img src="img/search.png"></button>
+					<div class="clearfix"></div>					
+				</div>
+				<div class="friends" id="friends-list">
+					<div class="friend chatting-now">
+						<img src="img/people/0.jpg" alt="user">
+						<div class="friend-info">
+							<span>Ahmed Mouradi</span>
+							<p>You: You sent an attachment</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/1.jpg" alt="user">
+						<div class="friend-info">
+							<span>Linus Tech Tips</span>
+							<p>You: What about a 32K setup?</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/2.jpg" alt="user">
+						<div class="friend-info">
+							<span>Marques Brownlee</span>
+							<p>You: What does the K stand for?</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/3.jpg" alt="user">
+						<div class="friend-info">
+							<span>Tech Source</span>
+							<p>You: Your build is freaking sick!</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/4.jpg" alt="user">
+						<div class="friend-info">
+							<span>M3KKY</span>
+							<p>You: Bellehi شاشة mte3ek HD?</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/5.jpg" alt="user">
+						<div class="friend-info">
+							<span>Austin Evans</span>
+							<p>You: Best tech gadget under 30$?</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/6.jpg" alt="user">
+						<div class="friend-info">
+							<span>Hardware Canucks</span>
+							<p>Dmitry: I'm gonna review it !</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/7.jpg" alt="user">
+						<div class="friend-info">
+							<span>Cyprien</span>
+							<p>You: Qu'est ce que vous rire?</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/8.jpg" alt="user">
+						<div class="friend-info">
+							<span>Thomas Frank</span>
+							<p>You: Stop Procrastinating today!</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/9.jpg" alt="user">
+						<div class="friend-info">
+							<span>Unbox Therapy</span>
+							<p>Lew: I'm back with another video!</p>
+						</div>
+					</div>
+					<div class="friend">
+						<img src="img/people/10.jpg" alt="user">
+						<div class="friend-info">
+							<span>Jonathon Morrison</span>
+							<p>You: Favourite pair of sneakers?</p>
+						</div>
+					</div>
+					<a href="javascript:void(0)">See more friends</a>
+				</div>
+				<div class="bot-navbar">
+					<div class="user">
+						<img src="img/avatar.png" alt="user">
+						<span>mansour</span>
+						<div class="clearfix"></div>
+					</div>
+					<button id="showSettingsMenu" onclick="showSettingsMenu()"><img src="img/settings.png"></button>
+					<div class="settings-menu" id="settings-menu">
+						<button class="setting" onclick="logOut()">
+							<img src="img/logout.png">
+							<span>Sign out</span>
+							<div class="clearfix"></div>
+						</button>
+						<button class="setting" id="showSettings">
+							<img src="img/settings.png">
+							<span>Settings</span>
+							<div class="clearfix"></div>
+						</button>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</navbar>
+			<header>
+				<button title="Show remaining time:" onclick="showRemainingtime()"><img src="img/clock.png" alt="Time"></button>
+				<div class="remaining-time" id="remainingTime"></div>
+				<h1>Ahmed Mouradi</h1>
+				<span>Active 29m ago</span>
+				<div class="clearfix"></div>
+			</header>
+			<div class="chat">
+				<div class="messages" id="messages">
+					<span class="message-time">18/03/2018 4:37PM</span>
+					<div class="message-received">
+						<h6>Ahmed</h6>
+						<img src="img/people/0.jpg" alt="user" title="Ahmed Mouradi">
+						<p>3anna 5edma math?</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="message-sent">
+						<img src="img/avatar.png" alt="user" title="Oussama Mansour">
+						<p>Yup ex 5 -> 18 p208</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="message-sent">
+						<img src="img/avatar.png" alt="user" title="Oussama Mansour">
+						<p>ken 5demet ab3eth brojla</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="message-received">
+						<h6>Ahmed</h6>
+						<img src="img/people/0.jpg" alt="user" title="Ahmed Mouradi">
+						<img src="img/thumb-up.png" alt="thumbs up" class="thumbs-up">
+						<div class="clearfix"></div>
+					</div>
+					<span class="message-time">25/03/2018 5:18PM</span>
+					<div class="message-sent">
+						<img src="img/avatar.png" alt="user" title="Oussama Mansour">
+						<p>Nharet lerb3a 3anna devoir philo w grève so chaamalna??</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="message-received">
+						<h6>Ahmed</h6>
+						<img src="img/people/0.jpg" alt="user" title="Ahmed Mouradi">
+						<p>Frankly I don't know!</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="message-sent">
+						<img src="img/avatar.png" alt="user" title="Oussama Mansour">
+						<p>7a99a choft e5er video habtou MKBHD?</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="message-sent">
+						<img src="img/avatar.png" alt="user" title="Oussama Mansour">
+						<img src="img/msg-img.jpg" alt="image" class="msg-img">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="send-message">
+					<input type="text" id="message-content" placeholder="Type a message...">
+					<div class="message-options">
+						<button title="Thumbs up" onclick="thumbsUp()"><img src="img/thumb-up.png"></button>
+						<button title="Emoji"><img src="img/emoticon-happy.png"></button>
+						<button title="Media"><img src="img/image-plus.png"></button>
+						<button title="Files"><img src="img/paperclip.png"></button>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="settings" id="settings">
+				<header>
+					<button title="<-- Back to chat" onclick="backToChat()"><img src="img/message-text.png" alt="Friends"></button>
+					<h1>Settings</h1>
+				</header>
+				<div class="settings-menus">
+					<div class="profile">
+						<h4>Your profile</h4>
+						<img src="img/user-logo.png" alt="user">
+						<span>mansour</span>
+						<span>Oussama Mansour</span>
+						<button>Change Avatar</button>
+					</div>
+					<div class="settings-text">
+						<h4>Edit your account details</h4>
+					</div>
+					<div class="account">
+						<label>Username:</label>
+						<input type="text" placeholder="Enter username" value="mansour" spellcheck="false">
+						<div class="clearfix"></div>
+						<label>Full name:</label>
+						<input type="text" placeholder="Enter full name" value="Oussama Mansour" spellcheck="false">
+						<div class="clearfix"></div>
+						<label>Email:</label>
+						<input type="email" placeholder="Enter email" value="oussamamn12345@gmail.com" spellcheck="false">
+						<div class="clearfix"></div>
+						<label class="password">New password:</label>
+						<input type="password" placeholder="Enter password" value="admin" spellcheck="false">
+						<div class="clearfix"></div>
+						<label class="password">Repeat password:</label>
+						<input type="password" placeholder="Enter password again" value="admin" spellcheck="false">
+						<div class="clearfix"></div>
+						<button>Save changes</button>
+					</div>
+					<div class="timer">
+						<h4>Select your time for today:</h4>
+						<div class="select hours">
+							<span>hours</span>
+							<select id="hours">
+								<option value="0" selected hidden>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+						<div class="select">
+							<span>minutes</span>
+							<select id="minutes">
+								<option value="00" selected>00</option>
+								<option value="15">15</option>
+								<option value="30">30</option>
+								<option value="45">45</option>
+							</select>							
+						</div>
+						<div class="select">
+							<span>seconds</span>
+							<select id="seconds">
+								<option value="00" selected>00</option>
+								<option value="10">10</option>
+								<option value="30">30</option>
+								<option value="45">45</option>
+							</select>							
+						</div>
+						<button title="Set Timer" onclick="setTimer(this)"><img src="img/timer.png" alt="send"></button>
+						<div class="clearfix"></div>
+						<h4>Your remaining time is: </h4>
+						<div class="time" id="time">
+							<p><span id="displayedHours">00</span>&nbsp;h&nbsp;<span id="displayedMinutes">00</span>&nbsp;m&nbsp;<span id="displayedSeconds">00</span>&nbsp;s</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="quote">
+						<!--<blockquote>"الوقت كالسيف بما تشتهيه السفن طلع البدر علينا"</blockquote>-->
+						<blockquote><span>Time isn't what</span><span>we want most but </span><span>what we use worst.</span></blockquote>
+						<span>-William Penn</span>
+					</div>
+					<div class="social-links">
+						<h4>External Links:</h4>
+						<button type="button" title="Facebook"><img src="img/social/facebook.png"></button>
+						<div class="social-link-info"><a href="https://www.facebook.com/mansouraoussama" target="_blanc">Facebook &nbsp;&#x2197;</a></div>
+						<button type="button" title="YouTube"><img src="img/social/youtube.png"></button>
+						<div class="social-link-info"><a href="javascript:void(0)" target="_blanc">YouTube &nbsp;&#x2197;</a></div>
+						<button type="button" title="Twitter"><img src="img/social/twitter.png"></button>
+						<div class="social-link-info"><a href="https://www.twitter.com/mansouraoussama" target="_blanc">Twitter &nbsp;&#x2197;</a></div>
+						<button type="button" title="Personal Website"><img src="img/social/web.png"></button>
+						<div class="social-link-info"><a href="http://www.oussamamansour.cf" target="_blanc">Website &nbsp;&#x2197;</a></div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="welcome-message">
+				<p>Welcome back to iConnect!<br>Please chose your time for today.</p>
+			</div>
+			<div class="copyright">
+				<span>&copy; Copyright 2018</span>
+				<span>All rights reserved to iConnect</span>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</section>
+		<section class="expired-session" id="expiredSessionMsg">
+			<div class="container">
+				<div class="info">
+					<h2>Oops!</h2>
+					<p> It looks like your time for today is over!<br>Please wait for tomorrow to use our service again!</p>
+					<button onclick="location.href='../index.html'">Back Home</button>					
+				</div>
+				<img src="img/session-img.jpg">					
+			</div>
+		</section>
+	</body>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/script.js"></script>
+</html>
